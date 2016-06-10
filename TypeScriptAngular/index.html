@@ -5,15 +5,17 @@
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
     <link rel="stylesheet" href="app.css" type="text/css" />
-    <script src="app.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="bikeapp.js"></script>
 </head>
 <body>
     <h1>TypeScript HTML App</h1>
 
-    <div id="content"></div>
-
-    <div ng-app="testapp">
-
+    <div id="content" ng-app="bikeapp">
+        <a href="#/bikes">Bikes!</a>
+        <div ng-view></div>
     </div>
+
 </body>
 </html>
