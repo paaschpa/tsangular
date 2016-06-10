@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="todo.js"></script>
+</head>
+<body>
+    <div ng-app="todomvc">
+        <div ng-controller="TodoCtrl">
+            <input type="text" ng-model="newTodo.title" />
+            <button ng-click="createTodo(newTodo)">
+                Create
+            </button>
+
+            <div ng-repeat="t in todos">
+                <div ng-hide="editing[$index]"><p>{{t.title}} - completed = {{t.completed}} <button ng-click="editTodo($index)">Edit</button></p></div>
+                <div ng-show="editing[$index]">
+                    <p>
+                        <input type="text" value="{{t.title}}" ng-model="t.title" /> 
+                        <input type="checkbox" value="{{t.completed}}" ng-model="t.completed" />
+                        <button ng-click="saveTodo($index, t)">Save</button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
